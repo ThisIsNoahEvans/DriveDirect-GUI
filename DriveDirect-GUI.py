@@ -1,4 +1,3 @@
-#GUI Version
 
 import tkinter as tk
 import pandas as pd
@@ -46,8 +45,5 @@ def getDownloadURL ():
     
 button1 = tk.Button(text='Get Your Link (and copy to the clipboard)', command=getDownloadURL, bg='white', fg='black', font=('helvetica', 9, 'bold'))
 canvas1.create_window(250, 175, window=button1)
-
-#button2 = tk.Button(text='Copy Download Link', command=copyURL, bg='white', fg='black', font=('helvetica', 9, 'bold'))
-#canvas1.create_window(300, 180, window=button2)
 
 root.mainloop()
