@@ -11,7 +11,5 @@ The program then adjusts the URL to the direct download format - like when you c
 
 The GUI version of this tool runs using Tkinter.
 
-*Note: I adapted the Tkinter code from [here](https://datatofish.com/entry-box-tkinter) so the code may not be 100% efficient as it could be.*
-
 ## Enjoy!
 If you have any issues, post an issue here on GitHub or [email me.](mailto:programming@itsnoahevans.co.uk)
