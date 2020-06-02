@@ -1,8 +1,6 @@
-
 import tkinter as tk
-import pandas as pd
 
-root= tk.Tk()
+root = tk.Tk()
 
 canvas1 = tk.Canvas(root, width = 500, height = 230,  relief = 'raised')
 canvas1.pack()
@@ -19,31 +17,15 @@ entry1 = tk.Entry (root)
 canvas1.create_window(250, 125, window=entry1)
 
 def getDownloadURL ():
-    
-    link = entry1.get()
+	downloadLink = (((entry1.get().replace('file/d/', 'uc?export=download&id=')).replace('/view?usp=sharing', '')).replace('/view', ''))
 
-    downloadLink = str('')
+	root.clipboard_clear()
+	root.clipboard_append(downloadLink)
 
-    #Create direct URL
-    downloadLink = link.replace('file/d/', 'uc?export=download&id=')
-    downloadLink = downloadLink.replace('/view?usp=sharing', '')    
+	label3 = tk.Label(root, text=downloadLink ,font=('helvetica', 10, 'bold'))
+	label3.pack()
 
-    finalLink = str(downloadLink)
-    #Copy to clipboard
-    print('final URL:', finalLink)
-    df = pd.DataFrame([downloadLink])
-    df.to_clipboard(index=False, header=False)
-    
-    label3 = tk.Label(root, text= finalLink ,font=('helvetica', 10))
-    canvas1.create_window(250, 210, window=label3)
-    
-    label4 = tk.Label(root, text= finalLink ,font=('helvetica', 10, 'bold'))
-    canvas1.create_window(250, 230, window=finalLink)
-
-
-    
-    
-button1 = tk.Button(text='Get Your Link (and copy to the clipboard)', command=getDownloadURL, bg='white', fg='black', font=('helvetica', 9, 'bold'))
+button1 = tk.Button(text='Get Your Link (And Copy To The Clipboard)', command=getDownloadURL, bg='white', fg='black', font=('helvetica', 9, 'bold'))
 canvas1.create_window(250, 175, window=button1)
 
 root.mainloop()
